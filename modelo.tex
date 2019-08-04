@@ -1,0 +1,259 @@
+\documentclass[tg]{mdtufsm}
+
+\usepackage{subcaption}
+\usepackage{caption}
+\captionsetup{
+	justification=raggedright,
+	figurewithout,labelsep=endash,
+	singlelinecheck=false,
+	compatibility=false
+	}
+
+
+
+
+
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\usepackage{ragged2e}
+\usepackage{colortbl}
+\usepackage{times}              % pacote para usar fonte Adobe Times
+\usepackage{setspace}
+\usepackage{array,multirow}
+\usepackage{float} 
+\usepackage[portuguese,titlenumbered,ruled]{algorithm2e} % algoritmos
+\usepackage[T1]{fontenc}        % pacote para conj. de caracteres correto
+\usepackage{fix-cm} %para funcionar corretamente o tamanho das fontes da capa
+\usepackage{times, color, xcolor}       % pacote para usar fonte Adobe Times e cores
+\usepackage[utf8]{inputenc}   % pacote para acentuação
+\usepackage{graphicx}  % pacote para importar figuras
+% % \usepackage{caption}
+% \usepackage[]{subcaption}
+\usepackage{amsmath,latexsym,amssymb} %Pacotes matemáticos
+\usepackage[%hidelinks%, 
+            bookmarksopen=true,linktocpage,colorlinks=true,
+            linkcolor=black,citecolor=black,filecolor=magenta,urlcolor=blue,
+            pdftitle={Título do Trabalho},
+            pdfauthor={nome do autor},
+            pdfsubject={Trabalho de Conclusão de Curso},
+            pdfkeywords={modelo, latex, tcc, graduação}
+            ]{hyperref} 
+
+%Margens conforme MDT 2015
+\usepackage[inner=30mm,outer=20mm,top=30mm,bottom=20mm]{geometry}
+%algortmo definição
+% \usepackage{algorithm}
+% \usepackage{algorithmic}
+% \floatname{algorithm}{Algoritmo}
+% \renewcommand{\algorithmicfor}{\textbf{para}}
+% \renewcommand{\algorithmicend}{\textbf{fim}}
+% \renewcommand{\algorithmicendfor}{\textbf{fim de} \algorithmicfor}
+% \renewcommand{\algorithmicdo}{\textbf{faça}}
+%==============================================================================
+% Se o pacote hyperref foi carregado a linha abaixo corrige um bug na hora
+% de montar o sumário da lista de figuras e tabelas
+% Se o pacote não foi carregado, comentar a linha %
+%==============================================================================
+\input{macros/bugcaption}
+
+%==============================================================================
+% Identificação do trabalho
+%==============================================================================
+\title{Aprendizado de reforço para Navegação de Robô Móveis}
+
+\author{Costa de Jesus}{Junior}
+%Descomentar se for uma "autora"
+%\autoratrue
+
+%% Lombada
+\titulacao{Bacharel} %Tecn\'{o}logo ou Bacharel ou Licenciatura
+
+
+
+%folha rosto
+\course{Engenharia de Controle e Automação}
+\initials{UFSM} 
+\institute{Centro de Tecnologia}
+\degree{Bacharel de Engenharia de Controle e Automação}
+
+%CIP
+\email{dranaju@gmail.com} %email do autor
+
+% Número do TG (verificar na secretaria do curso)
+% Para mestrado deixar sem opção dentro do {}
+\trabalhoNumero{}
+
+%Orientador
+\advisoronepage[Prof.]{Dr.}{Fernado Tello Gamarra}{Daniel}
+\advisor[Prof.]{Dr. (UFSM)}{Fernado Tello Gamarra}{Daniel}
+%Se for uma ``orientadora'' descomentar a linha baixo
+%\orientadoratrue
+
+%Co orientador, comentar se não existir
+%\coadvisor[Prof.]{Drª.}{Pereira}{Maria Regina}
+%\coorientadoratrue %Se for uma ``Co-Orientadora''
+
+%Avaliadores (Banca)
+\committee[Me.]{Sobre nome}{Nome menbro banca}{UFSM}
+\committee[Tecg.]{Sobre nome}{Nome menbro banca}{UFSM}
+
+% a data deve ser a da defesa; 
+% dia, mes e ano correntes
+\date{03}{Julho}{2019} 
+
+%Palavras chave
+\keyword{Política de Gradiente Determinística Profunda}
+\keyword{Aprendizado por Reforço Profundo} 
+\keyword{Navegação de robôs}
+
+%keyword
+\keywordAbstract{Deep Deterministic Policy Gradients}
+\keywordAbstract{Deep Reinforcement Learning}
+\keywordAbstract{Robot’s Navigation}
+%%=============================================================================
+%% Início do documento
+%%=============================================================================
+\begin{document}
+	
+	
+
+%%=============================================================================
+%% Capa e folha de rosto
+%%=============================================================================
+\maketitle
+%%=============================================================================
+%% Catalogação (obrigatório para mestrado) e Folha de aprovação
+%%=============================================================================
+%Somente obrigatório para dissertação, para TG, remover as linhas	77	%
+%Como a CIP vai ser impressa atrás da página de rosto, as margens inner e outer	
+%devem ser invertidas.
+\newgeometry{inner=20mm,outer=30mm,top=30mm,bottom=20mm} %%
+\makeCIP{} 		
+\restoregeometry
+
+%Se for usar a catalogação gerada pelo gerador do site da biblioteca comentar as linhas
+%\includeCIP{CIP.pdf}
+	
+%%=============================================================================
+%folha de aprovação
+%%=============================================================================
+\makeapprove
+
+%%=============================================================================
+%% Dedicatória (opcional)
+%%=============================================================================
+% \include{pessoal/dedicatoria}
+%%=============================================================================
+%% Agradecimentos (opcional)
+%%=============================================================================
+\include{pessoal/agradecimento}
+%%=============================================================================
+%% Epígrafe (opcional)
+%%=============================================================================
+% \include{pessoal/epigrafe}
+%%=============================================================================
+%% Resumo
+%%=============================================================================
+\include{abstract/abstract}
+
+%% Lista de Ilustrações (opc)
+%% Lista de Símbolos (opc)
+%% Lista de Anexos e Apêndices (opc)
+
+%%=============================================================================
+%% Lista de figuras (comentar se não houver)
+%%=============================================================================
+\listoffigures
+%%=============================================================================
+%% Lista de tabelas (comentar se não houver)
+%%=============================================================================
+\listoftables
+
+%%=============================================================================
+%% Lista de Apêndices (comentar se não houver)
+%%=============================================================================
+%\listofappendix
+
+%%=============================================================================
+%% Lista de Anexos (comentar se não houver)
+%%=============================================================================
+%\listofannex
+
+%%=============================================================================
+%% Lista de abreviaturas e siglas
+%%=============================================================================
+ %o parametro deve ser a abreviatura mais longa
+
+\include{siglas/lista}
+
+%%=============================================================================
+%% Lista de simbolos (opcional)
+%%=============================================================================
+%Simbolos devem aparecer conforme a ordem em que aparecem no texto
+% o parametro deve ser o símbolo mais longo
+%\begin{listofsymbols}{teste}
+%  \item [$\varnothing$] vazio
+ % \item [$\Gamma$]  Gama
+%  \item [$\forall$] Para todo
+%\end{listofsymbols}
+
+%%=============================================================================
+%% Sumário
+%%=============================================================================
+\tableofcontents
+
+
+
+
+
+
+
+
+
+
+
+%%=============================================================================
+%% Início da dissertação
+%%=============================================================================
+\setlength{\baselineskip}{1.5\baselineskip}
+
+
+%%========================================================================
+%Adiciona cada capitulo
+\include{capitulos/1_introduction}
+\include{capitulos/2_revision}
+\include{capitulos/3_materials_methods}
+\include{capitulos/4_resultados}
+\include{capitulos/5_conclusion}
+%%========================================================================
+
+\setlength{\baselineskip}{\baselineskip}
+
+%%=============================================================================
+%% Referências
+%%=============================================================================
+\begin{flushleft}
+\bibliographystyle{abnt}
+\bibliography{referencias/referencias}
+\end{flushleft}
+
+%IMPORTANTE: Se precisar usar alguma seção ou subseção dentro dos apêndices ou
+%anexos, utilizar o comando \tocless para não adicionar no Sumário
+%Exemplos: 
+% \tocless\section{Histórico}
+%%=============================================================================
+%% Apêndices
+%%=============================================================================
+\appendix
+
+\include{apendices/apendicea}
+%\include{apendices/apendiceb}
+
+%%=============================================================================
+%% Anexos
+%%=============================================================================
+\annex
+\include{anexos/anexoa}
+
+\end{document}

@@ -1,0 +1,29 @@
+\subsection{Q-Learning}
+
+A diferença de um agente que toma suas decisões pelo processo de decisão de Markov e \textit{Q-Learning} é que em uma abordagem do Markoviana o agente olha a qualidade dos estados futuros baseados no estado atual, enquanto que em \textit{Q-Learning} o agente olha para a qualidade de cada ação sabendo o estado atual \cite{watkins1992q}. 
+‘Q’ é definido como a “qualidade” da ação de um agente em um estado e a função retornada é a recompensa dessa ação. É possível derivar a fórmula para o \textit{Q-Learning} através da abordagem de Markov, gerando a seguinte equação:
+\begin{equation}
+    Q( s_{t}, a_t ) = R(s_t,a_{t}) + \gamma \sum_{s_{t+1}} P( s_{t+1} \mid {s_t,a_t} ) \underset{a_{t+1}}{max} (Q(s_{t+1}, a_{t+1}))
+    \label{eq:eq4}
+\end{equation}
+
+Mesmo depois de achar o valor de `$Q$' causado por uma ação, é preciso lembrar que o agente precisa percorrer esse ambiente provavelmente mais de uma vez. 
+Então se for mantida a ideia da equação \ref{eq:eq4}, nunca será possível que um agente inteligente possa aprender, pois essa fórmula permite apenas atualizar os valores de `$Q$' para uma certa ação que aconteceu no tempo atual, sem levar em conta se a ação foi boa ou ruim.
+Para corrigir isso é preciso considerar uma diferença temporal e uma taxa de aprendizado ($\alpha$) para que assim seja possível que o algoritmo melhore seu desempenho com o tempo, mesmo que faça ações que não beneficiem o agente. 
+Ou seja, é possível definir as seguintes equações:
+
+\begin{enumerate}
+    \item A equação da diferença temporal entre os valores de Q:
+    \begin{gather}
+        TD_t = \Delta Q( s_t,a_t )\\
+        TD_t = R(s_t,a_{t}) + \gamma \sum_{s_{t+1}} P( s_{t+1} \mid {s_t,a_t} ) \underset{a_{t+1}}{max} (Q(s_{t+1}, a_{t+1}) - Q_{t-1}(s_{t}, a_{t}))
+    \end{gather}
+    
+    \item A equação que atualizar o valor de Q para cada ação que passou por aquele estado:
+    \begin{equation}
+        Q_t ( s_t,a_t ) = Q_{ t-1 }( s_t,a_t )+ \alpha TD_t( s_t,a_t )
+        \label{eq:q_function}
+    \end{equation}
+\end{enumerate}
+
+Com a equação \ref{eq:q_function} definida é possível montar um agente inteligente que aprende por reforço e com o passar do tempo.

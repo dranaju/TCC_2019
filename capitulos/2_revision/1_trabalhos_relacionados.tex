@@ -1,0 +1,13 @@
+\section{Trabalhos Relacionados}
+
+O Deep-RL já foi aplicado anteriormente em tarefas que envolvem robótica, entre essas aplicações podem ser referenciado os trabalhos de (\citeauthor{kober2013reinforcement}, \citeyear{kober2013reinforcement}; \citeauthor{stone2005reinforcement}, \citeyear{stone2005reinforcement}).
+Mnih \citeyearpar{mnih2013playing} utilizou de rede neural convolucional para estimar uma função de valor para recompensas futuras no jogos eletrônicos do Atari, essa estratégia foi chamada de \textit{Deep Q-learning}.
+A \textit{Deep Q-learning} pode ser apenas usada em uma tarefa que tenha ações discretas. Para estendê-lo para o controle contínuo, Lillicrap \citeyearpar{lillicrap2015continuous} propôs uma política de gradiente determinística profunda.
+Essa tornou a base para as aplicações de Deep-RL na navegação de robôs móveis, assim como, na criação de novas técnicas como actor-crítica suave \cite{haarnoja2018soft}.
+
+Tai \citeyearpar{tai2017virtual} criou um planejador de movimento sem mapeamento para um robô móvel pegando 10 leituras de um sensor \textit{laser} e a posição de um alvo em relação ao robô como entrada, e os comandos de direção contínuos como saída da rede, mas sendo primeiramente proposto como comandos de direção discretos \cite{tai2016towards}. Foi mostrado que, com métodos assíncronos de Deep-RL, um planejador de movimento sem mapeamento pode ser treinado e completar a tarefa de chegar a um algo determinado.
+
+Zhu \citeyearpar{zhu2017target} propôs um outro modelo para aplicar Deep-RL para a tarefa de dirigir um robô móvel. O modelo criado toma a obervação atual de estado e a imagem do alvo como entrada e gera uma ação em um ambiente de três como saída.
+
+Uma atividade que pode ser muito desafiante na robótica é navegar um veículo com segurança e eficiência em ambientes com muitos pedestres. Chen \citeyearpar{chen2017socially} elaborou um modelo Deep-RL que pode quantificar o que fazer e não fazer no mecanismo de navegação humana.
+Este trabalho desenvolveu uma politica de navegação eficiente de tempo que respeita normas sociais comuns. Criando assim um método capaz de controlar um robô móvel que se move na velocidade de caminhada humana em um ambiente com muitos pedestres.,

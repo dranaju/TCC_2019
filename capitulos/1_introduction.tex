@@ -1,0 +1,87 @@
+\chapter{Introdução}
+
+É observado atualmente um grande crescimento no campo da inteligência artificial (AI). 
+Isso é devido a melhora do hardware dos computadores atuais, que fazem com que os algoritmos mais recentes de AI sejam viáveis \cite{luo2005artificial}, principalmente com o aumento do poder computacional das unidades de processamento gráfico (GPU). 
+As GPU’s tem como estrutura um processamento paralelo que torna mais eficientes os cálculos computacionais, em comparação a uma unidade central de processamento (CPU) \cite{asano2009performance}. 
+A popularidade das GPU’s aconteceu também pela grande quantidade de dados gerados pela internet.
+
+O Aprendizado por Reforço Profundo (Deep-RL) está começando a adquirir resultados interessantes em diferentes áreas, tais como: tarefas que envolvem o controle de sistemas discretos \cite{mnih2013playing}, sistemas contínuos \cite{lillicrap2015continuous}, e mais recentemente na robótica (\citeauthor{gu2017deep}, \citeyear{gu2017deep}; \citeauthor{mahmood2018benchmarking}, \citeyear{mahmood2018benchmarking}).
+As primeiras aplicações de Deep-RL na robótica foram no uso de manipulação em ambientes totalmente observáveis e estáveis \cite{gu2016continuous}, mas tarefas em robótica móvel envolvem obstáculos que interagem com ambientes físicos e objetos, tornando assim o local de trabalho mais complexo.
+Em ordem de resolver esse problema, métodos de Deep-RL normalmente tentam discretizar as ações para tornar o problema mais simples (\citeauthor{tai2016towards}, \citeyear{tai2016towards}; \citeauthor{zhu2017target}, \citeyear{zhu2017target}).
+Em artigos recentes são exploradas técnicas para o controle contínuo de ações usado para navegação de robôs móveis com bons resultados (\citeauthor{tai2017virtual}, \citeyear{tai2017virtual}; \citeauthor{chen2017socially}, \citeyear{chen2017socially}).
+
+\section{Descrição do Problema}
+%estou aqui agora
+
+O Deep-RL é definido como um campo da ciência que envolve treinos extensivos com redes neurais artificiais que usam de funções complexas, por exemplo, a dinâmica não-linear para mudar os dados brutos de um estado de alta dimensionalidade no qual pode ser entendido por um sistema robótico \cite{lecun2015deep}.
+Usar o aprendizado de máquina para alcançar a tarefa de navegação autônoma em robôs móveis não é uma atividade simples como muitos pensam. 
+O processo de percepção de um ambiente robótico e a interpretação das informações que ele adquire permitem compreender a condição de seu entorno, e assim fazer planos para mudar o estado e observar como suas ações impactam seu ambiente.
+O desafio de navegar em um ambiente para os robôs móveis inclui problemas de movimento em locais com obstáculos variados, tornando assim o um ambiente complexo para um simples planejador de navegação \cite{shabbir2018survey}.
+
+\section{Objetivos}
+
+O desenvolvimento do projeto tem como objetivo utilizar as redes Deep-RL na tarefa de navegação de um robô móvel. Sua função é fazer com que um robô móvel, em um ambiente simulado e real, consiga chegar até um ponto alvo no mapa sem que a rede tenha um conhecimento prévio do ambiente. Espera-se que a agente inteligente chegue ao alvo sem colidir com nenhum obstáculo.
+
+Concomitantemente, verificar o desempenho e resultados que tais redes podem oferecer na navegação de robôs móveís.
+
+Objetivos específicos:
+\begin{itemize}
+\item Fazer a estrutura de redes Deep-RL capazes de descrever o problema da navegação, definindo-se uma entrada e saída desse sistema.
+\item Criar um sistema de recompensas para que o robô móvel consiga completar a tarefa designada de chegar a um alvo determinado.
+\item Aplicar a estrutura das redes e sistema de recompensas em ambientes simulados e reais.
+\item Apresentar e medir os resultados obtidos nos ambientes testados das redes Deep-RL.
+\end{itemize}
+
+
+
+% \label{chap:Introducao}
+
+% Está é a introdução do trabalho. Este modelo estar formatado conforme a MDT (Manual de Dissertação e Tese)da UFSM (Universidade Federal de Santa Maria) 20015. 
+
+% Um bom livro de linguagens de programação é o \cite{Sebesta:2005}. 
+% Conforme Sebesta \citeyearpar{Sebesta:2005}, uma boa linguagem de programação é Java \cite{Sun:2010}.
+
+% Segundo Lee~\citeyearpar{Lee:2009}, a definição de contexto mais citada na bibliografia é a definição
+% proposta por Abowd \textit{et al.}:
+
+% \begin{quote}
+%          Contexto é qualquer informação que pode ser utilizada 
+%          para caracterizar a situação de uma entidade. Uma entidade é uma pessoa, lugar ou objeto que 
+%          podem ser considerados relevantes para a interação entre um usuário e uma aplicação, 
+%          incluindo o usuário e as suas próprias aplicações. \citep[tradução nossa]{Abowd:1999}
+% \end{quote}
+
+% Outras referências: \cite{Alex:2010}, \cite{Weiser:1991} e \cite{norell:thesis}.
+
+% \section{Objetivos}
+% O objetivo deste trabalho é .....
+
+% \section{Tabela}
+% Um exemplo de tabela é a \ref{tabrecursosdisp1}:
+
+
+
+% \begin{table}[!ht]
+% 	\caption{Comparação entre recursos disponíveis}
+% 	\begin{center}
+% 		\begin{tabular}{ll|ll}
+% 			\hline
+% 			\multicolumn{2}{c}{Cacti}       & \multicolumn{2}{|c}{Zabbix}                   \\ \hline
+% 			& CPU usage                     & CPU jumps                                  &  \\ \hline
+% 			& CPU utilization               & CPU load                                   &  \\ \hline
+% 			& Load usage                    & CPU utilization                            &  \\ \hline
+% 			& Load averge                   & Disk space usage                           &  \\ \hline
+% 			& Logged in users               & Memory usage                               &  \\ \hline
+% 			& Memory usage                  & Network traffic on eth0                    &  \\ \hline
+% 			& Ping Latency                  & Network traffic on eth2                    &  \\ \hline
+% 			& Traffic (bits/sec)            & Swap usage                                 &  \\ \hline
+% 			&                               & Value cache effectiveness                  &  \\ \hline
+% 			&                               & Zabbix cache usage, \% free                &  \\ \hline
+% 			&                               & Zabbix data gathering process busy         &  \\ \hline
+% 			&                               & Zabbix internal process busy               &  \\ \hline
+% 			&                               & Zabbix server performance                  &  \\ \hline
+% 		\end{tabular}
+% 	\end{center}
+% 	\small{Fonte:Adaptado de \cite{dos2016comparativo}.}
+% 	\label{tabrecursosdisp1}
+% \end{table}
