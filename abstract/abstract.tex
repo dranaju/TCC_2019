@@ -1,8 +1,10 @@
 \begin{abstract}
-Esse trabalho apresenta um estudo da utilização das técnicas de aprendizado profundo usando a Política de Gradiente Determinística Profunda para a aplicação na navegação de robô móveis. 
-Para realizar este trabalho foram utilizados os ambientes virtuais de simulação disponibilizados pela ROBOTIS no software de simulação Gazebo. 
-Depois de feita a análise dos resultados, é possível concluir que o algoritmo de aprendizado por reforço profundo, com ações contínuas, é efetivo para a tomada de decisões de um veículo robótico. 
-Porém, é preciso criar um sistema de recompensa para que o agente inteligente consiga assim cumprir seus objetivos.
+Esse trabalho apresenta um estudo de técnicas de aprendizado profundo usando a rede de Política de Gradiente Determinística Profunda e rede de Ator-Crítica Suave para a aplicação na navegação de robô móveis. 
+Em ordem de fazer o robô chegar até um alvo em um mapa, as redes têm 10 leituras do sensor laser, a velocidade linear e angular anterior, e a posição relativa e ângulo do robô móvel até o alvo como entradas das redes.
+Como saída, as redes têm a velocidade linear e angular. 
+Dos resultados analisados, é possível concluir que os algoritmos de aprendizado por reforço profundo, com ações contínuas, são efetivas para tomada de decisão de um veículo robótico e que as redes de Ator-Crítica Suave apresenta resultados superiores, em menos episódios, as redes de Política de Gradiente Determinística Profunda.
+Contudo, é necessário criar uma boa função de recompensa para o agente inteligente realizar seus objetivos.
+Em ordem de mostrar o desempenho dos algoritmos de Aprendizado por Reforço Profundo, foi aplicado com sucesso as arquiteturas nos experimentos com um robô simulado em três ambientes e um robô real em dois ambientes.
 
 \end{abstract}
 
@@ -22,9 +24,6 @@ Porém, é preciso criar um sistema de recompensa para que o agente inteligente 
 %%============ MANTER ESSA LINHA ============================================
 \ %%============ MANTER ESSA LINHA e deixar uma em branco ===================
 
-This paper presents a study of the use of deep learning techniques using the Deep Deterministic Policy Gradients for application on the navigation of mobile robots. 
-The research studies for this case used the virtual simulation environments provided by ROBOTIS in the simulation’s software Gazebo.
-After the analysis of the results, it is possible to conclude that the deep reinforcement learning’s algorithms, with continuous actions, are effective for decision-make of a robotic vehicle's decisions. 
-However, it is necessary to create a reward’s systems for the intelligent agent can accomplish your objectives.
+Escrever Depois
 
 \end{englishabstract}

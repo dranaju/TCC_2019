@@ -19,6 +19,7 @@ A simulação de robôs é uma ferramenta essencial em toda a caixa de ferrament
 Um bom simulador faz possível se testar rapidamente algoritmos, desenhar robôs, e treinar sistemas com inteligência artificial usando cenários realistas.
 Com o Gazebo \cite{fairchild2016ros} é possível simular estes ambientes facilmente e com a vantagem de ter uma comunidade ativa. Isso faz do Gazebo uma grande ferramenta na área de simulação de robótica. Na Figura \ref{fig:gazebo} é mostrado a simulação do robô Turtlebot3 Burger em um ambiente de 3D no simulador Gazebo.
 
+\vspace{0.25cm}
 \begin{figure}[H]
 \caption{Turtlebot3 Burger na simulação do Gazebo}
 \centerline{\includegraphics[width=\columnwidth]{imagens/gazebo.png}}
@@ -31,6 +32,7 @@ Com o Gazebo \cite{fairchild2016ros} é possível simular estes ambientes facilm
 O Turtlebot é uma robô de plataforma padrão ROS, e existem 3 versões da série.
 Os Turtlebots são robôs móveis acessíveis e programáveis para o uso na educação, pesquisa, e \textit{hobbies} e prototipagem de produtos. A terceira versão foi usada no projeto e é mostrada na Figura \ref{fig:burger}.
 
+\vspace{0.25cm}
 \begin{figure}[H]
 \caption{Turtlebot3 Burger real e simulado no Gazebo}
 \centerline{\includegraphics[width=\columnwidth]{imagens/burger.png}}
@@ -42,6 +44,7 @@ O Turtlebot3 Burger usa 2 motores DYNAMIXEL da série XL, para a detecção de o
 Todo o controle é feito pela placa controladora de código aberto OpenCR1.0 e o microprocessador Raspberry Pi 3.
 A Tabela \ref{tab1} mostra todas as especificações de \textit{hardware} do Turtlebot3 versão Burger.
 
+\vspace{0.25cm}
 \begin{table}[H]
 \caption{Especificação de Hardware do Turtlebot3 Burger}
 \begin{center}
@@ -101,6 +104,7 @@ Isso significa que este ambiente é mais complexo de um modo que o agente inteli
 O terceiro ambiente, mostrado na Figura \ref{subfig:simulated_env3}, é mais complexo que os ambientes anteriores.
 O número de paredes e obstáculos móveis, representados pelos blocos brancos, fazem o ambiente mais dinâmico, se aproximando de um ambiente no mundo real.
 
+\vspace{0.25cm}
 \begin{figure}[H]
 \caption{Ambientes de treinamento usados na simulação do Gazebo}
     \begin{center}
@@ -135,6 +139,7 @@ Algumas das entradas necessárias das redes no ambiente real foram obtidas por p
 O primeiro ambiente real é mostrado na Figura \ref{subfig:real_env1} e se assemelha com o primeiro ambiente de simulação sem obstáculos.
 O segundo ambiente real é mostrado na Figura z\ref{subfig:real_env2} e ele apresenta um ambiente complexo similar ao segundo e terceiro ambiente usado em simulação.
 
+\vspace{0.25cm}
 \begin{figure}[H]
 \caption{Ambientes criados para testes da rede DDPG e rede SAC em ambiente real}
     \begin{center}
@@ -170,6 +175,7 @@ Pois se o robô tem uma leitura de frequência lenta das entradas, ele não pode
 Desde jeito, o robô pode reagir a novos estados rapidamente.
 Esse método foi primeiro explorado por \cite{tai2017virtual}.
 
+\vspace{0.25cm}
 \begin{figure}[H]
 \caption{Sistema de estados e ações}
 \centerline{\includegraphics[width=\columnwidth]{imagens/state_action.png}}
@@ -183,6 +189,7 @@ Uma vez que os sistema de estados e ações tenham sido definidos, é possível 
 As redes têm como 14 entradas, como apresentado na Figura \ref{fig:in_out}, no qual 10 correspondem às leituras do \textit{laser} $x_t$, 2 correspondem à velocidade anterior linear $v_{t-1}$ e angular $\omega_{t-1}$, e 2 correspondem a posição relativa $d_t$ e ângulo $\theta_t$ do robô móvel ao alvo.
 As amostras da leitura do sensor \textit{laser} são entre $-$90$^\circ$ e 90$^\circ$ em relação ao robô. A saída da rede é a ação de velocidade linear $v_t$ e angular $\omega_t$ que são aplicadas no robô móvel.
 
+\vspace{0.25cm}
 \begin{figure}[H]
 \caption{Entradas e saídas da rede}
 \centerline{\includegraphics[width=10cm]{imagens/input_and_output.png}}
@@ -201,6 +208,7 @@ Na rede crítica, o valor de $Q$ do estado e ação atual são previstos.
 Usando apenas 3 camadas de redes neurais totalmente conectadas para processar a entrada. Onde a ação, saída da rede ator, é concatenada na segunda camada de rede neural.
 O valor de $Q$ é ativado através de uma função de ativação linear simples. Todas as respostas das funções de ativação citadas são mostradas na Figura \ref{fig:FA}.
 
+\vspace{0.25cm}
 \begin{figure}[H]
 \caption{Estrutura do modelo da rede DDPG}
 \centerline{\includegraphics[width=\columnwidth]{imagens/ddpg_structure.png}}
@@ -216,6 +224,7 @@ E as saídas da ação são mudados para a velocidade linear que varia entre $0$
 Já como diferença da rede DDPG, a rede SAC apresenta uma rede crítica que prediz o valor de $Q$ e uma rede de valor $V$ que prediz o valor do estado atual.
 As duas redes usam apenas 2 camadas totalmente conectadas para processar o estado de entrada.
 
+\vspace{0.25cm}
 \begin{figure}[H]
 \caption{Estrutura do modelo da rede SAC}
 \centerline{\includegraphics[width=\columnwidth]{imagens/sac_structure.png}}
@@ -224,6 +233,7 @@ As duas redes usam apenas 2 camadas totalmente conectadas para processar o estad
 \end{figure}
 
 \subsection{Função de Recompensa}
+\label{sec:r_function}
 
 Uma vez que o ambiente seja definido, é possível simular um robô móvel controlado para a tarefa de navegação.
 É necessário definir o sistema recompensa e penalidade para a rede DDPG e SAC.
@@ -252,32 +262,28 @@ Ao contrário disso, a recompensa é baseada na diferença de distância do alvo
 Se essa diferença é positiva a recompensa dada é a distância percorrida multiplicada pelo hiperparâmetro $(c_{r1})$, e se a a distância é negativa é usado o hiperparâmetro $(c_{r2})$.
 Isso motiva o robô móvel a chegar mais próximo à posição do alvo e encoraja o agente a evitar obstáculo no ambiente.
 
-\subsection{Positioning capture in real environments}
+\subsection{Captura de Posição em Ambientes Reais}
 
-% % 
-% % 
-% % 
-% estoy aqyu%%%%%%%%
+Depois de treinar as redes DDPG e SAC através da simulação no Gazebo, as redes serão testadas em um cenário real.
+O Turtlebot3, versão Burger, será usado para realizar esse teste.
+Será necessário obter o ângulo e distância de um algo para a rede completar seu objetivo.
+Então, foi instalado uma câmera no teto para extrair essas informações.
 
-After training the DDPG network through simulation, it will be tested in a real scenario.
-The Turtlebot3, version Burger, will be used to perform this test.
-It will be necessary to obtain the angle and distance of a target for the network to complete its goal.
-So it was setup a camera in the ceiling to extract this information.
+Primeiramente, os pontos essenciais de posições para extrair ângulo e distância são tirados da imagem.
+Essas posições incluem o alvo, lado esquerdo e direito do robô, e três pontos para serem o parâmetro de referência da distância.
+A Figura \ref{fig:pixel_to_meter} mostra um quadro do cenário no qual foi usado círculos de diferentes cores para identificar os pontos relevantes.
+O círculo amarelo foi definido como o alvo, o círculo azul como o lado esquerdo do robô, o círculo vermelho como o lado direito e os três círculos verdes foram usados como parâmetros de referência para calcular a distância em metros do robô ao alvo.
 
-Firstly, the essential points positions to extract the angle and distance are taken from the image.
-These positions include the target, left and right side of the robot, and three points to be a distance reference parameter.
-Figure \ref{fig:pixel_to_meter} shows a frame of the scenario in which there were used different colored circles to identify the relevant points.
-The yellow circle was attached as the target, the blue to the left side of the robot, the red to the right side and the three green circles were used as reference parameter to calculate the distance.
-
+\vspace{0.25cm}
 \begin{figure}[H]
-\centerline{\includegraphics[width=10cm]{imagens/pixel_to_meter.png}}
-\caption{Real environment relevant points}
+\caption{Pontos relevantes do ambiente real}
+\centerline{\includegraphics[width=14cm]{imagens/pixel_to_meter.png}}
+\small{Fonte: Autor}
 \label{fig:pixel_to_meter}
 \end{figure}
 
-
-After the points were extracted from the center of the circles, it is possible to calculate the two necessary DDPG network inputs.
-So, it is necessary to figure out the vector distance that connects the center of the Turtlebot3 to the target point, and the vector direction which represents the direction of the robot.
+Depois que os pontos foram extraído do centro dos círculos, é possível calcular as duas entradas necessárias para as redes.
+Então é necessário descobrir o vetor de distância que conecta o centro do Turtlebot3 ao ponto do alvo, e o vector de direção que representa a orientação angular do robô ao alvo no mapa.
 % Firstly, it is needed to compute the vector $distance$.
 % It starts from the center of the Turtlebot3, which is equal to the midpoint of the blue and red points.
 % The center of green circles have a predefined distance from each other, that helps to calculate the robot and target distance, doing by converting the module of vector $distance$ in pixels to the distance in meters.
@@ -288,7 +294,7 @@ So, it is necessary to figure out the vector distance that connects the center o
 % It is calculated by extracting the perpendicular vector to the vector which goes from the blue circle center to the red circle center.
 % Now that we have the direction of Turtlebot3, it is possible to extract the angle between vector $distance$ and vector $direction$, which is the angle between the target and the front of the mobile robot.
 % Finally, the two necessary information needed was obtained.
-The distance and angle between the mobile robot and the target are calculated frame by frame, and it is used as the necessary inputs of the DDPG network simultaneously.
+A distância e ângulo entre o robô móvel e alvo são calculadas quadro por quadro, e é usado como as entradas necessárias das redes simultaneamente.
 
 
 

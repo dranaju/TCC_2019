@@ -64,7 +64,7 @@ O algoritmo DDPG é descrito no Algoritmo \ref{alg:ddpg}. Nesta definição é p
 % \end{algorithmic}
 % \end{algorithm}
 
-\vspace{1.0cm}
+\vspace{1.5cm}
 \begin{algorithm}[H]
 \DontPrintSemicolon
 Aleatoriamente inicializa a rede crítica $Q(s,a|\theta^Q)$ e a rede ator $\mu(s|\theta^{\mu})$ com os pesos da rede $\theta^Q$ e $\theta^\mu$. \;
@@ -128,7 +128,7 @@ Para calcular a entropia de $\mathcal{H}$ de uma variável aleatória $x$ de fun
 
 A rede SAC utiliza dos mesmos métodos de repetição de memória e de uma rede alvo que a rede DDPG. No Algoritmo \ref{alg:sac} é mostrado as etapas de treinamento da rede ator, da rede crítica e da rede de valor $V$ no SAC.
 
-\vspace{1.0cm}
+\vspace{1.5cm}
 \begin{algorithm}[H]
 \DontPrintSemicolon
 Aleatoriamente inicializa a rede crítica $Q(s,a|\theta^{Q_{1}})$, $Q(s,a|\theta^{Q_{2}})$, a rede ator $\pi(s,a|\theta^{\pi})$ e a rede de valor de $V(s|\theta^V)$ com os pesos da rede $\theta^{Q_1}$, $\theta^{Q_2}$, $\theta^\pi$ e $\theta^V$. \;

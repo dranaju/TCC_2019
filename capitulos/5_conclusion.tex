@@ -1,3 +1,17 @@
 \chapter{Conclusão}
 
-Está é a conclusão do trabalho .... \cite{mnih2013playing}
+Neste trabalho uma de rede DDPG e SAC foram usadas na navegação de um robô móvel através de controle contínuo em um ambiente virtual e real.
+Assim, foi mostrado que redes de aprendizado por reforço são capazes de resolver o problema de navegação robótica.
+O experimento consistiu que o robô pudesse chegar a uma posição alvo em diferentes ambientes simulados e reais.
+Em ordem de realizar esse objetivo a função de recompensa foi proposta.
+As saídas de redes utilizadas foram a velocidade linear e angular do robô móvel.
+Todas estruturas de rede criadas foram treinadas no ambiente de simulação do Gazebo antes de usar a redes em ambientes reais.
+
+Com o resultado obtidos do treinamento no ambiente de simulação, foi analisado o desempenho dos algoritmos de agentes inteligentes na tarefa de evitar obstáculos e chegar até o seu objetivo final.
+Foi notado que a rede SAC consegue em um número menor de episódios ter um desempenho superior a rede DDPG.
+Nos dois ambientes reais propostos, os algoritmos foram capazes de completar a tarefa da navegação para chegar até um alvo definido no mapa, em que ambas as redes propostas no trabalho conseguiram completar com facilidade.
+
+É possível concluir que as redes DDPG e SAC são adequadas para o desenvolvimento de aplicações que necessitam um controle contínuo na robótica. 
+As técnicas de  Deep-RL podem produzir excelentes resultados se a função de recompensa proposta é bem-feita para o problema que ela quer resolver.
+Foi provado que agentes inteligentes podem mover-se em um ambiente real complexo por apenas treinar em ambientes simulados sem nenhum conhecimentos prévio do cenário.
+Em um futuro trabalho, é planejado fazer a utilização de redes Deep-RL para o controle de múltiplos para jogarem futebol.
